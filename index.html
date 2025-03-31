@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PromptPad - Your Prompt Workspace</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Radim Brnka &copy; 2025">
+    <meta name="description" content="A privacy-first workspace for preparing, refining, and sharing AI prompts. It helps you clean, anonymize, and
+        analyze prompts before you paste them into a chatbot or share them with others—without losing context or
+        meaning.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCY7X8Z9MP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-KCY7X8Z9MP');
+    </script>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="assets/logo.webp" alt="PromptPad Logo">
+        <div class="logo-text">
+            <h1>Prompt<span id="pad">Pad</span></h1>
+            <h2>Prep, Protect, Paste!</h2>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <h2>What is PromptPad?</h2>
+    <p>A privacy-first workspace for preparing, refining, and sharing AI prompts.</p><p>When you're copy-pasting prompts into ChatGPT, Claude, or another LLM, it's easy to overshare. PromptPad is your sanity check—and gives you a hand to keep your prompts clean, lean, and safe to share, without losing their soul. <a href="#" title="#">Read more.</a></p>
+
+    <label for="inputText"><strong>Input Text / Code:</strong></label>
+    <textarea id="inputText" placeholder="Type or paste your text or code here..."></textarea>
+    <div id="inputStats"></div>
+
+    <div class="settings">
+        <h3>General Settings</h3>
+        <label><input type="checkbox" id="scrubSensitive" checked> Scrub sensitive information (emails, IPs, SSNs, phone numbers, credit cards, hashes)</label>
+        <label><input type="checkbox" id="anonymizeNames" checked> Replace typical first and last names with
+            letters (John &rarr; [A])</label>
+        <label><input type="checkbox" id="reduceWhitespace" checked> Reduce redundant whitespaces (a  a &rarr; a a)</label>
+        <label><input type="checkbox" id="showTokenPreview"> Show token preview</label>
+        <h3>Code-specific Settings</h3>
+        <label><input type="checkbox" id="removeComments" checked> Remove typical comment structures (//, /* */,
+            #)</label>
+        <label><input type="checkbox" id="convertMarkdown" checked> Convert Markdown to plain text</label>
+        <label><input type="checkbox" id="preserveFormatting"> Preserve code formatting (keep line breaks &amp;
+            indentation)</label>
+    </div>
+
+    <div class="button-group">
+        <button id="minimizeBtn">Minimize</button>
+    </div>
+
+    <div class="output-container">
+        <label for="outputText"><strong>Minimized Text:</strong></label>
+        <textarea id="outputText" readonly placeholder="Your minimized text will appear here..."></textarea>
+        <div id="outputStats"></div>
+    </div>
+
+    <button id="copyBtn" disabled>Copy to Clipboard</button>
+    <button id="saveHistoryBtn" disabled>Save to History</button>
+
+    <div class="summary-container" id="summary"></div>
+
+    <div class="token-preview" id="tokenPreview" style="display: none;">
+        <h3>Token Preview:</h3>
+        <div id="tokens"></div>
+    </div>
+
+    <div class="history-container" id="history">
+
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 <a href="https://brnka.com" title="My links">Radim Brnka</a> &middot; <a href="https://github.com/rbrnka/promptpad" title="Source code">GitHub</a> &middot; v1.0
+</footer>
+
+<script src="bundle.js"></script>
+</body>
+</html>
