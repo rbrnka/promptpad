@@ -4,6 +4,8 @@
 ![https://github.com/rbrnka/promptpad?tab=MIT-1-ov-file](https://img.shields.io/github/license/rbrnka/fractal-traveler)
 ![GitHub Release Date](https://img.shields.io/github/release-date/rbrnka/promptpad)
 
+<img width="1698" height="1207" alt="image" src="https://github.com/user-attachments/assets/c43b8cce-7e92-49a5-b800-fb17db1793b1" />
+
 PromptPad is a privacy-first workspace designed to optimize text and code for language model (LLM) processing. It allows you to quickly clean, minimize, and analyze your input, ensuring that it's concise, efficient, and cost-effective when used in a prompt. Whether you're working with plain text or source code, PromptPad provides a suite of smart tools to clean, anonymize, and audit prompts before you paste them into a chatbot without losing context or meaning.
 
 > _"Prep, Protect, and Paste Smarter"_
